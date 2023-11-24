@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainLayout"
+    tools:context=".activities.AboutSettingsBlock"
+    android:background="@color/background">
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintStart_toEndOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:srcCompat="@drawable/get_back" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/about"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:alpha="15"
+        android:foreground="#D9D9D9"
+        android:foregroundTint="#26D9D9D9"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:flow_verticalAlign="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/pageTitle"
+            tools:ignore="RtlSymmetry"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/montserrat_bold"
+            android:paddingStart="10dp"
+            android:text="@string/settings"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/searchField"
+            android:layout_width="169dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="10dp"
+            android:autofillHints=""
+            android:elevation="10dp"
+            android:background="@drawable/text_field_background"
+            android:drawableEnd="@drawable/search"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_bold"
+            android:hint="@string/search"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:alpha="15"
+        android:foreground="#D9D9D9"
+        android:foregroundTint="#26D9D9D9"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/mainButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:elevation="10dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/main"
+            app:srcCompat="@drawable/mainicon_button" />
+
+        <ImageButton
+            android:id="@+id/messengerButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:elevation="10dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/chat"
+            app:srcCompat="@drawable/messenger_button" />
+
+        <ImageButton
+            android:id="@+id/ideasButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:elevation="10dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/ideas"
+            app:srcCompat="@drawable/ideas_button" />
+
+        <ImageButton
+            android:id="@+id/roadmapButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:elevation="10dp"
+            android:layout_weight="1"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/roadmap"
+            app:srcCompat="@drawable/roadmap_button" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="326dp"
+        android:layout_height="168dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rectangle_background"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        android:padding="20dp"
+        android:elevation="19dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title">
+
+        <TextView
+            android:id="@+id/appName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat_extralight"
+            android:textSize="16sp"
+            android:padding="5dp"
+            android:text="App Name" />
+
+        <TextView
+            android:id="@+id/version"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat_extralight"
+            android:textSize="16sp"
+            android:padding="5dp"
+            android:text="Version: 1.0" />
+
+        <TextView
+            android:id="@+id/build"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat_extralight"
+            android:textSize="16sp"
+            android:padding="5dp"
+            android:text="Build: 23N11" />
+
+        <TextView
+            android:id="@+id/developer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat_extralight"
+            android:textSize="16sp"
+            android:padding="5dp"
+            android:text="Developer: Developer" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
