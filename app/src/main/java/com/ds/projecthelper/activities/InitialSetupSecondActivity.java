@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.ds.projecthelper.CheckTextViews;
 import com.ds.projecthelper.Constants;
 import com.ds.projecthelper.R;
 
@@ -18,6 +19,7 @@ public class InitialSetupSecondActivity extends AppCompatActivity implements Con
     private EditText passwordField, loginField;
     private TextView title, iHaveAccount, iForgotMyPassword;
     private boolean logInIsOpen = false;
+    private CheckTextViews checkField;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -31,6 +33,8 @@ public class InitialSetupSecondActivity extends AppCompatActivity implements Con
         title = findViewById(R.id.title);
         iHaveAccount = findViewById(R.id.iHaveAccount);
         iForgotMyPassword = findViewById(R.id.iForgotPassword);
+
+        checkField = new CheckTextViews();
 
         buttonNext.setOnClickListener(v -> {
             if(checkForEnteredData()) startActivity(new Intent(this, InitialSetupThirdActivity.class)); else findErrorReason();
@@ -58,8 +62,8 @@ public class InitialSetupSecondActivity extends AppCompatActivity implements Con
     }
 
     private void findErrorReason() {
-        checkField(loginField, "логина", MIN_LOGIN_LENGTH);
-        checkField(passwordField, "пароля", MIN_PASSWORD_LENGTH);
+        checkField.checkField(loginField, "login", MIN_LOGIN_LENGTH);
+        checkField.checkField(passwordField, "password", MIN_PASSWORD_LENGTH);
     }
 
     private boolean checkForEnteredData(){
@@ -75,15 +79,6 @@ public class InitialSetupSecondActivity extends AppCompatActivity implements Con
 
     private String getPasswordText(){
         return passwordField.getText().toString().trim();
-    }
-
-    private void checkField(EditText editText, String title, int minLength){
-        String textViewString = editText.getText().toString().trim();
-
-        if(!textViewString.isEmpty()) {
-            if (textViewString.length() < minLength)
-                editText.setError("Длина " + title + " должна быть не менее " + minLength + " символов");
-        }else editText.setError("Заполните поле");
     }
 
     private void makeLogInView(){
