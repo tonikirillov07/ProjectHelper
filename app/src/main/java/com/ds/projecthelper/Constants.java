@@ -1,8 +1,10 @@
 package com.ds.projecthelper;
 
-public class Constants {
-    public static final int CURRENT_BALANCE = 5000;
-    public static final int GOOD_COST = 235000;
-    public static final int SCHOLARSHIP = 3800;
-    public static final int SAVINGS = 7;
+public interface Constants {
+    int EMPTY_FIELD_ERROR_CODE = 0;
+    int PASSWORD_LENGTH_IS_TOO_LITTLE_ERROR_CODE = 1;
+    int LOGIN_LENGTH_IS_TOO_LITTLE_ERROR_CODE = 3800;
+    int MIN_LOGIN_LENGTH = 4;
+    int MIN_PASSWORD_LENGTH = 8;
+
 }

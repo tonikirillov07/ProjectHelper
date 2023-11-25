@@ -39,6 +39,7 @@
         android:id="@+id/loginOrEmailTextField"
         android:drawableStart="@drawable/login_icon"
         android:paddingStart="10dp"
+        android:paddingEnd="10dp"
         android:layout_width="224dp"
         android:layout_height="39dp"
         android:layout_marginTop="36dp"
@@ -62,6 +63,7 @@
         android:id="@+id/passwordField"
         android:drawableStart="@drawable/password_icon"
         android:paddingStart="10dp"
+        android:paddingEnd="10dp"
         android:layout_width="224dp"
         android:layout_height="39dp"
         android:layout_marginTop="16dp"
@@ -72,7 +74,6 @@
         android:inputType="textPassword"
         android:background="@drawable/text_field_background"
         android:hint="@string/your_password"
-
         android:textColorHint="@color/white"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
