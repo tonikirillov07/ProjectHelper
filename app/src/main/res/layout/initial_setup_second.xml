@@ -16,12 +16,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/title"
         android:elevation="10dp"
         app:srcCompat="@drawable/avatar" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -125,12 +125,27 @@
         android:layout_marginBottom="16dp"
         android:text="@string/i_have_account"
         android:fontFamily="@font/montserrat_bold"
-        android:textColor="#A9A9A9"
+        android:textColor="@color/gray"
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         android:focusable="true" />
+
+    <TextView
+        android:id="@+id/iForgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:clickable="true"
+        android:visibility="invisible"
+        android:focusable="true"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/i_m_forgot_my_password"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/iHaveAccount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

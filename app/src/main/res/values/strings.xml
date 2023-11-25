@@ -70,4 +70,5 @@
     <string name="do_you_want_personal_code_follow_the_instruction">Do you want personal code? Follow the instruction</string>
     <string name="default_elevation">10dp</string>
     <string name="todo">TODO</string>
+    <string name="i_m_forgot_my_password">I\'m forgot my password...</string>
 </resources>

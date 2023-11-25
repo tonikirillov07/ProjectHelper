@@ -1,8 +1,11 @@
 package com.ds.projecthelper.activities;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,8 +15,11 @@ import com.ds.projecthelper.R;
 
 public class InitialSetupSecondActivity extends AppCompatActivity implements Constants {
     private Button buttonNext;
-    private TextView passwordField, loginField;
+    private EditText passwordField, loginField;
+    private TextView title, iHaveAccount, iForgotMyPassword;
+    private boolean logInIsOpen = false;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,9 +28,32 @@ public class InitialSetupSecondActivity extends AppCompatActivity implements Con
         loginField = findViewById(R.id.loginOrEmailTextField);
         passwordField = findViewById(R.id.passwordField);
         buttonNext = findViewById(R.id.buttonNext);
+        title = findViewById(R.id.title);
+        iHaveAccount = findViewById(R.id.iHaveAccount);
+        iForgotMyPassword = findViewById(R.id.iForgotPassword);
 
         buttonNext.setOnClickListener(v -> {
             if(checkForEnteredData()) startActivity(new Intent(this, InitialSetupThirdActivity.class)); else findErrorReason();
+        });
+
+        iHaveAccount.setOnClickListener(v -> {
+            if(!logInIsOpen){
+                iHaveAccount.setText("I haven't account");
+                iForgotMyPassword.setVisibility(View.VISIBLE);
+                title.setText("Well, then let’s log in");
+
+                logInIsOpen = true;
+            }else{
+                iHaveAccount.setText("I have account");
+                iForgotMyPassword.setVisibility(View.INVISIBLE);
+                title.setText("First, let’s create account");
+
+                logInIsOpen = false;
+            }
+        });
+
+        iForgotMyPassword.setOnClickListener(v -> {
+            startActivity(new Intent(this, RestorePasswordActivity.class));
         });
     }
 
@@ -48,12 +77,16 @@ public class InitialSetupSecondActivity extends AppCompatActivity implements Con
         return passwordField.getText().toString().trim();
     }
 
-    private void checkField(TextView textView, String title, int minLength){
-        String textViewString = textView.getText().toString().trim();
+    private void checkField(EditText editText, String title, int minLength){
+        String textViewString = editText.getText().toString().trim();
 
         if(!textViewString.isEmpty()) {
             if (textViewString.length() < minLength)
-                textView.setError("Длина " + title + " должна быть не менее " + minLength + " символов");
-        }else textView.setError("Заполните поле");
+                editText.setError("Длина " + title + " должна быть не менее " + minLength + " символов");
+        }else editText.setError("Заполните поле");
+    }
+
+    private void makeLogInView(){
+
     }
 }

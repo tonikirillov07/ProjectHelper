@@ -21,6 +21,7 @@ xmlns:tools="http://schemas.android.com/tools">
     <activity android:name=".activities.FeedbacksBlock"/>
     <activity android:name=".activities.ChangeEmailActivity"/>
     <activity android:name=".activities.InitialSetupThirdActivity"/>
+    <activity android:name=".activities.RestorePasswordActivity"/>
     <activity
         android:name=".activities.InitialSetupFirstActivity"
         android:exported="true">
