@@ -18,7 +18,10 @@ public class InitialSetupFirstActivity extends AppCompatActivity {
 
         buttonNext = findViewById(R.id.buttonNext);
         buttonNext.setOnClickListener(v -> {
-            startActivity(new Intent(InitialSetupFirstActivity.this, InitialSetupSecondActivity.class));
+            Intent intent = new Intent(this, InitialSetupSecondActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
         });
     }
 }

@@ -37,7 +37,12 @@ public class InitialSetupSecondActivity extends AppCompatActivity implements Con
         checkField = new CheckTextViews();
 
         buttonNext.setOnClickListener(v -> {
-            if(checkForEnteredData()) startActivity(new Intent(this, InitialSetupThirdActivity.class)); else findErrorReason();
+            if(checkForEnteredData()) {
+                Intent intent = new Intent(this, InitialSetupThirdActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+            } else findErrorReason();
         });
 
         iHaveAccount.setOnClickListener(v -> {
