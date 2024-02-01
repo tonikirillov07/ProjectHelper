@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.Button;
 
 import com.ds.projecthelper.R;
+import com.ds.projecthelper.util.AnotherActivity;
 
 public class InitialSetupFirstActivity extends AppCompatActivity {
     private Button buttonNext;
@@ -17,9 +18,7 @@ public class InitialSetupFirstActivity extends AppCompatActivity {
         setContentView(R.layout.activity_initial_setup_first);
 
         buttonNext = findViewById(R.id.buttonNext);
-        buttonNext.setOnClickListener(v -> {
-
-        });
+        buttonNext.setOnClickListener(v -> AnotherActivity.gotoAnotherActivity(this, InitialSetupSecondActivity.class, true));
     }
 
 

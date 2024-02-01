@@ -1,7 +1,6 @@
 package com.ds.projecthelper.activities;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -39,12 +38,12 @@ public class InitialSetupSecondActivity extends AppCompatActivity implements Con
 
         buttonNext.setOnClickListener(v -> onNextButtonAction());
         iHaveAccount.setOnClickListener(v -> onHaveAccountButtonAction());
-        iForgotMyPassword.setOnClickListener(v -> AnotherActivity.gotoAnotherActivity(this, RestorePasswordActivity.class));
+        iForgotMyPassword.setOnClickListener(v -> AnotherActivity.gotoAnotherActivity(this, RestorePasswordActivity.class, false));
     }
 
     private void onNextButtonAction(){
         if(checkForEnteredData()) {
-            AnotherActivity.gotoAnotherActivity(this, InitialSetupThirdActivity.class);
+            AnotherActivity.gotoAnotherActivity(this, InitialSetupThirdActivity.class, true);
         } else findErrorReason();
     }
 

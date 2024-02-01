@@ -5,10 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.ds.projecthelper.ShowAlerts;
 
 public abstract class AnotherActivity {
-    public static void gotoAnotherActivity(AppCompatActivity appCompatActivity, Class activityClass){
+    public static void gotoAnotherActivity(AppCompatActivity appCompatActivity, Class activityClass, boolean destroyPreviousActivity){
         try {
             Intent intent = new Intent(appCompatActivity, activityClass);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            if(destroyPreviousActivity) intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             appCompatActivity.startActivity(intent);
             appCompatActivity.finish();
         }catch (Exception e){

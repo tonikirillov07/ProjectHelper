@@ -7,6 +7,7 @@ import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.ds.projecthelper.R;
+import com.ds.projecthelper.user.UserInformation;
 
 public class MainPage extends AppCompatActivity {
     private ImageButton mainSettingsButton, mainButton, messengerButton, ideasButton, roadmapButton;
@@ -22,8 +23,6 @@ public class MainPage extends AppCompatActivity {
         ideasButton = findViewById(R.id.ideasButton);
         roadmapButton = findViewById(R.id.roadmapButton);
 
-        mainSettingsButton.setOnClickListener(v -> {
-            startActivity(new Intent(this, MainSettingsPage.class));
-        });
+        mainSettingsButton.setOnClickListener(v -> startActivity(new Intent(this, MainSettingsPage.class)));
     }
 }

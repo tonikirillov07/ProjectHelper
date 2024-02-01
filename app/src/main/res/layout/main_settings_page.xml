@@ -408,7 +408,7 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/moreButton"
+                    android:id="@+id/sendFeedBackButton"
                     android:layout_width="297dp"
                     android:layout_height="48dp"
                     android:layout_marginTop="15dp"

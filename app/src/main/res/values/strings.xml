@@ -75,6 +75,7 @@
     <string name="select_at_least_one_pl">Choose at least one programming language from the offered. This is necessary to complete the initial setup</string>
     <string name="an_exception_has_occurred">An exception has occurred</string>
     <string name="well_lets_log_in">Well, then let’s log in</string>
+    <string name="fill_in_this_field">Fill in this field</string>
     
     <string name="create_road_map">Create road map</string>
     <string name="remove_road_map">Remove road map</string>
