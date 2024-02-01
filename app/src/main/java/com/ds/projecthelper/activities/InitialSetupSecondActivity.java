@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.ds.projecthelper.CheckTextViews;
 import com.ds.projecthelper.Constants;
 import com.ds.projecthelper.R;
+import com.ds.projecthelper.util.AnotherActivity;
 
 public class InitialSetupSecondActivity extends AppCompatActivity implements Constants {
     private Button buttonNext;
@@ -36,34 +37,22 @@ public class InitialSetupSecondActivity extends AppCompatActivity implements Con
 
         checkField = new CheckTextViews();
 
-        buttonNext.setOnClickListener(v -> {
-            if(checkForEnteredData()) {
-                Intent intent = new Intent(this, InitialSetupThirdActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-                finish();
-            } else findErrorReason();
-        });
+        buttonNext.setOnClickListener(v -> onNextButtonAction());
+        iHaveAccount.setOnClickListener(v -> onHaveAccountButtonAction());
+        iForgotMyPassword.setOnClickListener(v -> AnotherActivity.gotoAnotherActivity(this, RestorePasswordActivity.class));
+    }
 
-        iHaveAccount.setOnClickListener(v -> {
-            if(!logInIsOpen){
-                iHaveAccount.setText("I haven't account");
-                iForgotMyPassword.setVisibility(View.VISIBLE);
-                title.setText("Well, then let’s log in");
+    private void onNextButtonAction(){
+        if(checkForEnteredData()) {
+            AnotherActivity.gotoAnotherActivity(this, InitialSetupThirdActivity.class);
+        } else findErrorReason();
+    }
 
-                logInIsOpen = true;
-            }else{
-                iHaveAccount.setText("I have account");
-                iForgotMyPassword.setVisibility(View.INVISIBLE);
-                title.setText("First, let’s create account");
-
-                logInIsOpen = false;
-            }
-        });
-
-        iForgotMyPassword.setOnClickListener(v -> {
-            startActivity(new Intent(this, RestorePasswordActivity.class));
-        });
+    private void onHaveAccountButtonAction(){
+        iHaveAccount.setText(!logInIsOpen ? getResources().getString(R.string.i_have_not_account): getResources().getString(R.string.i_have_account));
+        iForgotMyPassword.setVisibility(!logInIsOpen ? View.VISIBLE: View.INVISIBLE);
+        title.setText(!logInIsOpen ? getResources().getString(R.string.well_lets_log_in): getResources().getString(R.string.first_let_s_create_account));
+        logInIsOpen = !logInIsOpen;
     }
 
     private void findErrorReason() {
@@ -86,7 +75,4 @@ public class InitialSetupSecondActivity extends AppCompatActivity implements Con
         return passwordField.getText().toString().trim();
     }
 
-    private void makeLogInView(){
-
-    }
 }

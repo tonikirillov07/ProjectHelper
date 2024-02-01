@@ -19,9 +19,7 @@ public class ExceptionsActivity extends AppCompatActivity {
         exceptionText = findViewById(R.id.exceptionInfo);
 
         Button buttonOk = findViewById(R.id.buttonOk);
-        buttonOk.setOnClickListener(v -> {
-            finish();
-        });
+        buttonOk.setOnClickListener(v -> finish());
     }
 
     public TextView getExceptionText() {

@@ -34,21 +34,16 @@
             android:textSize="20sp"
             tools:ignore="RtlSymmetry" />
 
-        <EditText
-            android:id="@+id/searchField"
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
             android:layout_width="169dp"
             android:layout_height="36dp"
             android:layout_marginEnd="10dp"
-            android:autofillHints=""
+            app:searchIcon="@drawable/search"
             android:background="@drawable/text_field_background"
-            android:drawableEnd="@drawable/search"
-            android:ems="10"
-            android:elevation="10dp"
-            android:fontFamily="@font/montserrat_bold"
             android:hint="@string/search"
-            android:inputType="text"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
+            android:textAlignment="center"
+            app:animateNavigationIcon="true"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="14sp" />

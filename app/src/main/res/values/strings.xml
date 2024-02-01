@@ -8,6 +8,7 @@
     <string name="your_password">Your password</string>
     <string name="remember_me">Remember me</string>
     <string name="i_have_account">I have account</string>
+    <string name="i_have_not_account">I haven\'t account</string>
     <string name="it_s_time_for_questions_and_prefers">It\'s time for questions and prefers!</string>
     <string name="which_pls_do_you_use">Which PLs do you use?</string>
     <string name="now_choose_your_theme">Now choose your theme</string>
@@ -70,5 +71,24 @@
     <string name="do_you_want_personal_code_follow_the_instruction">Do you want personal code? Follow the instruction</string>
     <string name="default_elevation">10dp</string>
     <string name="todo">TODO</string>
-    <string name="i_m_forgot_my_password">I\'m forgot my password...</string>
+    <string name="i_m_forgot_my_password">I\'m forgot my password…</string>
+    <string name="select_at_least_one_pl">Choose at least one programming language from the offered. This is necessary to complete the initial setup</string>
+    <string name="an_exception_has_occurred">An exception has occurred</string>
+    <string name="well_lets_log_in">Well, then let’s log in</string>
+    
+    <string name="create_road_map">Create road map</string>
+    <string name="remove_road_map">Remove road map</string>
+    <string name="about_app">About app</string>
+    <string name="rate_app">Rate app</string>
+    <string name="change_theme">Change theme</string>
+    <string name="sounds">Sounds</string>
+    <string name="news_and_facts">News &amp; Facts</string>
+    <string name="recommended">Recommended</string>
+    <string name="change_password_or_personal_code">Change password | personal code</string>
+    <string name="change_login">Change login</string>
+    <string name="log_out">Log out</string>
+    <string name="account_settings">Account settings</string>
+    <string name="appearance_settings">Appearance settings</string>
+    <string name="ratings">Ratings</string>
+    <string name="chat_settings">Chat settings</string>
 </resources>

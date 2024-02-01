@@ -16,4 +16,29 @@
         <item>HTML</item>
         <item>CSS</item>
     </string-array>
+
+    <string-array name="search_requests">
+        <item>@string/create_road_map</item>
+        <item>@string/remove_road_map</item>
+        <item>@string/contrast</item>
+        <item>@string/brightness</item>
+        <item>@string/saturation</item>
+        <item>@string/about_app</item>
+        <item>@string/send_feedback</item>
+        <item>@string/rate_app</item>
+        <item>@string/change_theme</item>
+        <item>@string/sounds</item>
+        <item>@string/ideas</item>
+        <item>@string/news_and_facts</item>
+        <item>@string/recommended</item>
+        <item>@string/change_password_or_personal_code</item>
+        <item>@string/change_login</item>
+        <item>@string/log_out</item>
+        <item>@string/account_settings</item>
+        <item>@string/delete_account</item>
+        <item>@string/appearance_settings</item>
+        <item>@string/reset_settings</item>
+        <item>@string/ratings</item>
+        <item>@string/chat_settings</item>
+    </string-array>
 </resources>
