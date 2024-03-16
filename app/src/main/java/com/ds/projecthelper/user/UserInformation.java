@@ -8,15 +8,15 @@ import java.time.LocalDateTime;
 public class UserInformation {
     private String userName;
     private byte[] password;
-    private String dateOfRegistration;
+
+    public UserInformation(String userName, byte[] password) {
+        this.userName = userName;
+        this.password = password;
+    }
 
     public void setData(String userName, String password){
         this.userName = userName;
         this.password = Base64.decode(password, Base64.CRLF);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            this.dateOfRegistration = LocalDateTime.now().toString();
-        }
     }
 
     public String getUserName() {
@@ -25,9 +25,5 @@ public class UserInformation {
 
     public byte[] getPassword() {
         return password;
-    }
-
-    public String getDateOfRegistration() {
-        return dateOfRegistration;
     }
 }

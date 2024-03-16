@@ -6,16 +6,19 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.ds.projecthelper.R;
+import com.ds.projecthelper.ShowAlerts;
 
 public class ThanksForFeedbackActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.thanks_for_your_feedback);
+        try {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.thanks_for_your_feedback);
 
-        Button buttonBack = findViewById(R.id.buttonBack);
-        buttonBack.setOnClickListener(v -> {
-            finish();
-        });
+            Button buttonBack = findViewById(R.id.buttonBack);
+            buttonBack.setOnClickListener(v -> finish());
+        }catch (Exception e){
+            ShowAlerts.showDialog(this, e, true);
+        }
     }
 }

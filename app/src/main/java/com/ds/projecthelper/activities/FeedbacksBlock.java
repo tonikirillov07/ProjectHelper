@@ -32,18 +32,19 @@ public class FeedbacksBlock extends AppCompatActivity {
         buttonNext.setOnClickListener(click -> sendFeedbackButtonAction());
         buttonRate.setOnClickListener(click -> onRateButton());
         sliderRate.addOnChangeListener((slider, value, fromUser) -> isSliderRateWasInteract = fromUser);
-
     }
 
     private void sendFeedbackButtonAction(){
-        if(!checkFeedback()) {
-            return;
+        try {
+            if (!checkFeedback()) return;
+
+            AnotherActivity.gotoAnotherActivity(this, ThanksForFeedbackActivity.class, false);
+
+            summarizeFeedbackTextField.getText().clear();
+            explainFeedbackTextField.getText().clear();
+        }catch (Exception e){
+
         }
-
-        AnotherActivity.gotoAnotherActivity(this, ThanksForFeedbackActivity.class, false);
-
-        summarizeFeedbackTextField.getText().clear();
-        explainFeedbackTextField.getText().clear();
     }
 
     private boolean checkFeedback(){
@@ -70,6 +71,6 @@ public class FeedbacksBlock extends AppCompatActivity {
 
     private void onRateButton(){
         if(isSliderRateWasInteract) AnotherActivity.gotoAnotherActivity(this, ThanksForFeedbackActivity.class, false);
-        else ShowAlerts.showDialog(this, new Exception("Rate app using slider"), false);
+        else ShowAlerts.showDialog(this, new Exception(getResources().getString(R.string.rate_this_app_using_slider)), false);
     }
 }

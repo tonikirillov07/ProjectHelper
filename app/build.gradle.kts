@@ -1,5 +1,6 @@
 plugins {
     id("com.android.application")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -32,11 +33,15 @@ android {
 }
 
 dependencies {
+    implementation(platform("com.google.firebase:firebase-bom:32.7.4"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-auth:22.3.1")
     implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("io.coil-kt:coil:2.5.0")
     implementation("io.getstream:avatarview-coil:1.0.7")
+    implementation("com.google.firebase:firebase-database:20.3.1")
     //noinspection AnnotationProcessorOnCompilePath
     annotationProcessor("org.projectlombok:lombok:1.18.30")
     testImplementation("junit:junit:4.13.2")

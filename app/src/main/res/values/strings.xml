@@ -1,8 +1,7 @@
 <resources>
-    <string name="app_name">ProjectHelper</string>
-    <string name="welcome_text">Welcome! This app will help with your projects! Press “Next” button to pass the initial setup phase</string>
-    <string name="ok">Ok</string>
+    <string name="app_name" translatable="false">ProjectHelper</string>
     <string name="next">Next</string>
+    <string name="welcome_text">Welcome! This app will help you with your projects! Press "Next" button to pass the initial setup phase</string>
     <string name="first_let_s_create_account">First, let\'s create account</string>
     <string name="enter_your_login_or_email">Your login or Email</string>
     <string name="your_password">Your password</string>
@@ -47,7 +46,7 @@
     <string name="oops_there_are_some_problems">Oops! There are some problems</string>
     <string name="account">Account</string>
     <string name="email">Email</string>
-    <string name="sample_email">mail.sample@gmail.com</string>
+    <string name="sample_email" translatable="false">mail.sample@gmail.com</string>
     <string name="change_email">Change Email</string>
     <string name="password_personal_code"><![CDATA[Password & personal code]]></string>
     <string name="select_action">Select action</string>
@@ -68,14 +67,15 @@
     <string name="almost_done_enter_the_5_digit_code_that_will_arrive_in_your_inbox_soon">Almost done! Enter the 5-digit code that will arrive in your inbox soon</string>
     <string name="changing_password">Changing password</string>
     <string name="changing_personal_code">Changing personal code</string>
-    <string name="do_you_want_personal_code_follow_the_instruction">Do you want personal code? Follow the instruction</string>
-    <string name="default_elevation">10dp</string>
-    <string name="todo">TODO</string>
+    <string name="do_you_want_personal_code_follow_the_instruction">Do you want to change a personal code? Follow the instruction</string>
+    <string name="default_elevation" translatable="false">10dp</string>
+    <string name="todo" translatable="false">TODO</string>
     <string name="i_m_forgot_my_password">I\'m forgot my password…</string>
     <string name="select_at_least_one_pl">Choose at least one programming language from the offered. This is necessary to complete the initial setup</string>
     <string name="an_exception_has_occurred">An exception has occurred</string>
     <string name="well_lets_log_in">Well, then let’s log in</string>
     <string name="fill_in_this_field">Fill in this field</string>
+    <string name="rate_this_app_using_slider">Rate app using slider</string>
     
     <string name="create_road_map">Create road map</string>
     <string name="remove_road_map">Remove road map</string>
@@ -92,4 +92,5 @@
     <string name="appearance_settings">Appearance settings</string>
     <string name="ratings">Ratings</string>
     <string name="chat_settings">Chat settings</string>
+    <string name="ok">OK</string>
 </resources>

@@ -19,13 +19,15 @@ xmlns:tools="http://schemas.android.com/tools">
     <activity android:name=".activities.MainSettingsPage"/>
     <activity android:name=".activities.AppearanceSettingsBlock"/>
     <activity android:name=".activities.FeedbacksBlock"/>
+    <activity android:name=".activities.ExceptionsActivity"/>
     <activity android:name=".activities.ThanksForFeedbackActivity"/>
     <activity android:name=".activities.ChangeEmailActivity"/>
     <activity android:name=".activities.InitialSetupThirdActivity"/>
     <activity android:name=".activities.RestorePasswordActivity"/>
     <activity
         android:name=".activities.InitialSetupFirstActivity"
-        android:exported="true">
+        android:exported="true"
+        android:configChanges="orientation|screenSize">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
