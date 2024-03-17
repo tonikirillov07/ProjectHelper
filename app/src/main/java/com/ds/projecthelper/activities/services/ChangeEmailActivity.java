@@ -1,4 +1,4 @@
-package com.ds.projecthelper.activities;
+package com.ds.projecthelper.activities.services;
 
 import androidx.appcompat.app.AppCompatActivity;
 

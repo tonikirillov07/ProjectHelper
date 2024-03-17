@@ -4,6 +4,8 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 
+import com.ds.projecthelper.dialogs.ErrorDialog;
+
 public class CheckTextViews {
     public void checkField(@NonNull EditText editText, String fieldName, int minLength){
         try {
@@ -12,7 +14,7 @@ public class CheckTextViews {
             else
                 editText.setError("Enter the text");
         }catch (Exception e){
-            ShowAlerts.showDialog(editText.getContext(), e, true);
+            ErrorDialog.showDialog(editText.getContext(), e, true);
         }
     }
 

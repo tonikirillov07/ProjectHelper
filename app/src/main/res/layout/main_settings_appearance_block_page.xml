@@ -8,7 +8,7 @@
     android:background="@color/background">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/headerLinearLayout"
         android:layout_width="0dp"
         android:layout_height="65dp"
         android:alpha="15"
@@ -124,7 +124,7 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/headerLinearLayout" />
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -135,7 +135,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.863"
         app:layout_constraintStart_toEndOf="@+id/title"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/headerLinearLayout"
         app:srcCompat="@drawable/get_back"
          />
 

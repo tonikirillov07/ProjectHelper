@@ -1,4 +1,4 @@
-package com.ds.projecthelper.activities;
+package com.ds.projecthelper.activities.initialSetup;
 
 import static com.ds.projecthelper.Constants.WHITE_COLOR_HEX;
 
@@ -16,7 +16,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.ds.projecthelper.R;
-import com.ds.projecthelper.ShowAlerts;
+import com.ds.projecthelper.dialogs.ErrorDialog;
+import com.ds.projecthelper.activities.settings.MainPage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +42,7 @@ public class InitialSetupThirdActivity extends AppCompatActivity {
             nextButton.setOnClickListener(v -> nextButtonAction());
             pushInfoToList(getResources().getStringArray(R.array.PLs));
         }catch (Exception e){
-            ShowAlerts.showDialog(this, e, true);
+            ErrorDialog.showDialog(this, e, true);
         }
     }
 
@@ -66,7 +67,7 @@ public class InitialSetupThirdActivity extends AppCompatActivity {
                 checkBoxes.add(checkBox);
             }
         }catch (Exception e){
-            ShowAlerts.showDialog(this, e, true);
+            ErrorDialog.showDialog(this, e, true);
         }
     }
 
@@ -78,10 +79,10 @@ public class InitialSetupThirdActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             } else {
-                ShowAlerts.showDialog(this, new Exception(getResources().getString(R.string.select_at_least_one_pl)), false);
+                ErrorDialog.showDialog(this, new Exception(getResources().getString(R.string.select_at_least_one_pl)), false);
             }
         }catch (Exception e){
-            ShowAlerts.showDialog(this, e, true);
+            ErrorDialog.showDialog(this, e, true);
         }
     }
 

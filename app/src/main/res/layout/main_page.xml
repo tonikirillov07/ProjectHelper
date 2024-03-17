@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/mainLayout"
-    tools:context=".activities.MainPage"
+    tools:context=".activities.settings.MainPage"
     android:background="@color/background">
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/buttonsBarLinearLayout"
         android:layout_width="0dp"
         android:layout_height="65dp"
         android:alpha="15"
@@ -68,7 +68,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/headerLinearLayout"
         android:layout_width="0dp"
         android:layout_height="65dp"
         android:alpha="15"
@@ -127,7 +127,7 @@
         android:elevation="10dp"
         app:layout_constraintHorizontal_bias="0.063"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/headerLinearLayout"
         tools:ignore="RtlSymmetry" />
 
     <ImageButton
@@ -136,20 +136,26 @@
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
         android:background="#00FFFFFF"
+        android:contentDescription="@string/main_settings"
         android:elevation="10dp"
+        android:transformPivotX="24dp"
+        android:transformPivotY="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.915"
         app:layout_constraintStart_toEndOf="@+id/spinner"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:srcCompat="@drawable/mainsettings"
-        android:contentDescription="@string/main_settings" />
+        app:layout_constraintTop_toBottomOf="@+id/headerLinearLayout"
+        app:srcCompat="@drawable/mainsettings" />
 
     <ScrollView
         android:id="@+id/newsAndFactsScrollView"
         android:layout_width="367dp"
         android:layout_height="421dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="12dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="12dp"
         android:foregroundGravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/buttonUpdateNewsAndFacts"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"

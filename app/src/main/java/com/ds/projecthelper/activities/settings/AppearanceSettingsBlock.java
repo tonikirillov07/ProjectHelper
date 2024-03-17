@@ -1,4 +1,4 @@
-package com.ds.projecthelper.activities;
+package com.ds.projecthelper.activities.settings;
 
 import android.os.Bundle;
 
@@ -6,11 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.ds.projecthelper.R;
 
-public class AboutSettingsBlock extends AppCompatActivity {
-
+public class AppearanceSettingsBlock extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_settings_about_block_page);
+        setContentView(R.layout.main_settings_appearance_block_page);
     }
 }

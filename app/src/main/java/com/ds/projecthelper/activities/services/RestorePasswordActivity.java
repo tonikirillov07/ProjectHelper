@@ -1,4 +1,4 @@
-package com.ds.projecthelper.activities;
+package com.ds.projecthelper.activities.services;
 
 import static com.ds.projecthelper.Constants.MIN_EMAIL_LENGTH;
 import static com.ds.projecthelper.Constants.MIN_PERSONAL_CODE_LENGTH;
@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.ds.projecthelper.CheckTextViews;
 import com.ds.projecthelper.R;
-import com.ds.projecthelper.ShowAlerts;
+import com.ds.projecthelper.dialogs.ErrorDialog;
 
 public class RestorePasswordActivity extends AppCompatActivity {
     private EditText mailTextField, personalCodeTextField;
@@ -36,7 +36,7 @@ public class RestorePasswordActivity extends AppCompatActivity {
             buttonNextWithEmail.setOnClickListener(v -> onRestoreWithEmailButtonClick());
             buttonNextWithPersonalCode.setOnClickListener(v -> onRestoreWithPersonalCodeButtonClick());
         }catch (Exception e){
-            ShowAlerts.showDialog(this, e, true);
+            ErrorDialog.showDialog(this, e, true);
         }
     }
 

@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/mainLayout"
-    tools:context=".activities.AboutSettingsBlock"
+    tools:context=".activities.settings.AboutSettingsBlock"
     android:background="@color/background">
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/getBackToMainSettingsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.863"
         app:layout_constraintStart_toEndOf="@+id/title"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/headerLinearLayout"
         app:srcCompat="@drawable/get_back" />
 
     <TextView
@@ -31,10 +31,10 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/headerLinearLayout" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/headerLinearLayout"
         android:layout_width="0dp"
         android:layout_height="65dp"
         android:alpha="15"
@@ -140,16 +140,17 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/appInfoLinearLayout"
         android:layout_width="326dp"
         android:layout_height="168dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/rectangle_background"
-        android:orientation="vertical"
+        android:elevation="19dp"
         android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
-        android:padding="20dp"
-        android:elevation="19dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title">
 
@@ -157,40 +158,40 @@
             android:id="@+id/appName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
             android:fontFamily="@font/montserrat_extralight"
-            android:textSize="16sp"
             android:padding="5dp"
-            android:text="App Name" />
+            android:text="App Name"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/version"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
             android:fontFamily="@font/montserrat_extralight"
-            android:textSize="16sp"
             android:padding="5dp"
-            android:text="Version: 1.0" />
+            android:text="Version: 1.0"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/build"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
             android:fontFamily="@font/montserrat_extralight"
-            android:textSize="16sp"
             android:padding="5dp"
-            android:text="Build: 23N11" />
+            android:text="Build: 23N11"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/developer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
             android:fontFamily="@font/montserrat_extralight"
-            android:textSize="16sp"
             android:padding="5dp"
-            android:text="Developer: Developer" />
+            android:text="Developer: Developer"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

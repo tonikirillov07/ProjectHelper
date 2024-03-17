@@ -1,4 +1,4 @@
-package com.ds.projecthelper.activities;
+package com.ds.projecthelper.activities.settings;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -10,19 +10,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 
 import com.ds.projecthelper.R;
-import com.ds.projecthelper.ShowAlerts;
+import com.ds.projecthelper.dialogs.ErrorDialog;
 import com.ds.projecthelper.user.UserController;
 import com.ds.projecthelper.user.UserInformation;
 import com.ds.projecthelper.util.AnotherActivity;
 import com.ds.projecthelper.util.Colors;
+import com.ds.projecthelper.util.Utils;
 
 import io.getstream.avatarview.AvatarView;
 
 public class MainSettingsPage extends AppCompatActivity {
     private SearchView searchView;
-    private TextView userNameText, dateOfRegistrationText;
+    private TextView userNameText, dateOfRegistrationText, goToUserSettings;
     private AvatarView avatarView;
-    private LinearLayout sendFeedbackButton;
+    private LinearLayout sendFeedbackButton, resetSettingsButton, appearanceButton, aboutButton, moreButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +36,32 @@ public class MainSettingsPage extends AppCompatActivity {
             dateOfRegistrationText = findViewById(R.id.dateOfRegistration);
             avatarView = findViewById(R.id.avatarView);
             sendFeedbackButton = findViewById(R.id.sendFeedBackButton);
+            resetSettingsButton = findViewById(R.id.resetSettingsButton);
+            appearanceButton = findViewById(R.id.appearanceButton);
+            aboutButton = findViewById(R.id.aboutButton);
+            moreButton = findViewById(R.id.moreButton);
+            goToUserSettings = findViewById(R.id.gotoUserSettings);
+
+            initButtons();
 
             initSearch(getResources().getStringArray(R.array.search_requests));
-
-            sendFeedbackButton.setOnClickListener(click -> onSendFeedBackButton());
             loadUserData(UserController.getUserInformation());
         }catch (Exception e){
-            ShowAlerts.showDialog(this, e, true);
+            ErrorDialog.showDialog(this, e, true);
+        }
+    }
+
+    private void initButtons() {
+        try{
+            sendFeedbackButton.setOnClickListener(click -> Utils.onSettingButtonClick(sendFeedbackButton, this::onSendFeedBackButton));
+            resetSettingsButton.setOnClickListener(click -> Utils.onSettingButtonClick(resetSettingsButton, () -> {}));
+            appearanceButton.setOnClickListener(click -> Utils.onSettingButtonClick(appearanceButton, () -> {}));
+            aboutButton.setOnClickListener(click -> Utils.onSettingButtonClick(aboutButton, () -> AnotherActivity.gotoAnotherActivity(this, AboutSettingsBlock.class, false)));
+            moreButton.setOnClickListener(click -> Utils.onSettingButtonClick(moreButton, () -> {}));
+
+            goToUserSettings.setOnClickListener(click -> AnotherActivity.gotoAnotherActivity(this, MainSettingsUserBlock.class, false));
+        }catch (Exception e){
+            ErrorDialog.showDialog(this, e, true);
         }
     }
 
@@ -60,4 +80,6 @@ public class MainSettingsPage extends AppCompatActivity {
     private void onSendFeedBackButton(){
         AnotherActivity.gotoAnotherActivity(this, FeedbacksBlock.class, false);
     }
+
+
 }

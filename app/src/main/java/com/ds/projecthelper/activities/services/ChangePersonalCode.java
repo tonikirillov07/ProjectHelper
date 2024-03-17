@@ -1,16 +1,15 @@
-package com.ds.projecthelper.activities;
-
-import android.os.Bundle;
+package com.ds.projecthelper.activities.services;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
 
 import com.ds.projecthelper.R;
 
-public class MainSettingsUserBlock extends AppCompatActivity {
+public class ChangePersonalCode extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_settings_user_block_page);
+        setContentView(R.layout.activity_change_personal_code);
     }
 }

@@ -5,11 +5,11 @@
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainSettingsUserBlock"
+    tools:context=".activities.settings.MainSettingsUserBlock"
     android:background="@color/background">
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.863"
         app:layout_constraintStart_toEndOf="@+id/title"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/headerLinearLayout"
         app:srcCompat="@drawable/get_back" />
 
     <TextView
@@ -33,10 +33,10 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/headerLinearLayout" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/headerLinearLayout"
         android:layout_width="0dp"
         android:layout_height="65dp"
         android:alpha="15"
@@ -85,9 +85,9 @@
         android:layout_width="413dp"
         android:layout_height="500dp"
         android:layout_marginTop="4dp"
+        android:layout_marginBottom="10dp"
         android:fadeScrollbars="false"
         android:scrollbars="vertical"
-        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -103,9 +103,9 @@
                 android:id="@+id/linearLayout9"
                 android:layout_width="326dp"
                 android:layout_height="144dp"
-                android:elevation="10dp"
                 android:background="@drawable/rectangle_background"
                 android:divider="@drawable/about"
+                android:elevation="10dp"
                 android:orientation="horizontal">
 
                 <io.getstream.avatarview.AvatarView
@@ -114,10 +114,10 @@
                     android:layout_height="110dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="15dp"
+                    android:elevation="10dp"
                     android:src="@drawable/rectangle_background"
                     app:avatarViewBorderColor="@color/white"
                     app:avatarViewBorderWidth="3dp"
-                    android:elevation="10dp"
                     app:avatarViewIndicatorBorderColor="@color/green"
                     app:avatarViewIndicatorBorderSizeCriteria="10"
                     app:avatarViewIndicatorColor="@color/green"
@@ -134,7 +134,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView21"
+                        android:id="@+id/userNameTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -145,7 +145,7 @@
                         android:textSize="16sp" />
 
                     <TextView
-                        android:id="@+id/dateOfReg"
+                        android:id="@+id/dateOfRegTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -172,8 +172,8 @@
                 android:layout_height="154dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/rectangle_background"
-                android:gravity="center_horizontal"
                 android:elevation="10dp"
+                android:gravity="center_horizontal"
                 android:orientation="vertical">
 
                 <TextView
@@ -199,12 +199,12 @@
                         android:layout_height="48dp"
                         android:layout_gravity="center_horizontal"
                         android:background="@drawable/button_background"
+                        android:elevation="10dp"
                         android:fontFamily="@font/montserrat_bold"
                         android:text="@string/change_email"
                         android:textAllCaps="false"
                         android:textColor="@color/white"
                         android:textSize="12sp"
-                        android:elevation="10dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -233,8 +233,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/rectangle_background"
-                android:gravity="center_horizontal"
                 android:elevation="10dp"
+                android:gravity="center_horizontal"
                 android:orientation="vertical">
 
                 <TextView
@@ -262,9 +262,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/button_background"
+                    android:elevation="10dp"
                     android:fontFamily="@font/montserrat_bold"
                     android:text="@string/change_password"
-                    android:elevation="10dp"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
@@ -276,9 +276,9 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/button_background"
+                    android:elevation="10dp"
                     android:fontFamily="@font/montserrat_bold"
                     android:text="@string/change_personal_code"
-                    android:elevation="10dp"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
@@ -288,17 +288,17 @@
                 android:layout_width="326dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:elevation="10dp"
                 android:background="@drawable/rectangle_background"
+                android:elevation="10dp"
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/logOut"
+                    android:id="@+id/logOutButton"
                     android:layout_width="match_parent"
                     android:layout_height="34dp"
                     android:layout_margin="10dp"
-                    android:elevation="10dp"
                     android:background="@drawable/settings_buttons"
+                    android:elevation="10dp"
                     android:gravity="start|center"
                     android:orientation="horizontal">
 
@@ -321,13 +321,14 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/deleteAccountButton"
                     android:layout_width="match_parent"
                     android:layout_height="34dp"
                     android:layout_margin="10dp"
-                    android:background="@drawable/settings_buttons"
-                    android:gravity="start|center"
-                    android:elevation="10dp"
                     android:layout_marginBottom="10dp"
+                    android:background="@drawable/settings_buttons"
+                    android:elevation="10dp"
+                    android:gravity="start|center"
                     android:orientation="horizontal">
 
                     <ImageView

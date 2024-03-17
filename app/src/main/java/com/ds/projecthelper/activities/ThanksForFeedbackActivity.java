@@ -6,7 +6,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.ds.projecthelper.R;
-import com.ds.projecthelper.ShowAlerts;
+import com.ds.projecthelper.dialogs.ErrorDialog;
 
 public class ThanksForFeedbackActivity extends AppCompatActivity {
     @Override
@@ -18,7 +18,7 @@ public class ThanksForFeedbackActivity extends AppCompatActivity {
             Button buttonBack = findViewById(R.id.buttonBack);
             buttonBack.setOnClickListener(v -> finish());
         }catch (Exception e){
-            ShowAlerts.showDialog(this, e, true);
+            ErrorDialog.showDialog(this, e, true);
         }
     }
 }

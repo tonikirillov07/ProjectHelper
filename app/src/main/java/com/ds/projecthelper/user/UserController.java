@@ -4,7 +4,7 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 
-import com.ds.projecthelper.ShowAlerts;
+import com.ds.projecthelper.dialogs.ErrorDialog;
 import com.ds.projecthelper.util.IOnAction;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -33,10 +33,20 @@ public class UserController {
 
     public static void createUser(String email, String password, IOnAction onSuccessfulAction, Context context){
         getInstance().getFirebaseAuth().createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
-            if(task.isSuccessful()) onSuccessfulAction.onAction(); else ShowAlerts.showDialog(context, Objects.requireNonNull(task.getException()), true);
+            if(task.isSuccessful()) onSuccessfulAction.onAction(); else ErrorDialog.showDialog(context, Objects.requireNonNull(task.getException()), true);
         });
     }
 
+    public static void logIn(String email, String password, IOnAction onSuccessfulAction, Context context){
+        getInstance().getFirebaseAuth().signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
+            if(task.isSuccessful()){
+                onSuccessfulAction.onAction();
+            }else{
+                ErrorDialog.showDialog(context, Objects.requireNonNull(task.getException()), true);
+            }
+        });
+
+    }
     public static void logOut(){
         getInstance().getFirebaseAuth().signOut();
     }

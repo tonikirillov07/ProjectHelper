@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ProjectHelper</string>
     <string name="ok">Хорошо</string>
     <string name="next">Далее</string>
     <string name="first_let_s_create_account">Сначала, давайте создадим аккаунт</string>
@@ -23,7 +22,9 @@
     <string name="main_settings">Основные настройки</string>
     <string name="update">Обновить</string>
     <string name="settings">Настройки</string>
+    <string name="goto_profile_settings">Перейти в настройки профиля -></string>
     <string name="appearance">Оформление</string>
+    <string name="arrow">></string>
     <string name="about">О программе</string>
     <string name="more">Больше</string>
     <string name="send_feedback">Отправить отзыв</string>
@@ -88,4 +89,9 @@
     <string name="ratings">Оценки</string>
     <string name="chat_settings">Настройки чата</string>
     <string name="welcome_text">Добро пожаловать! Это приложение поможет вам в ваших проектах! Нажмите кнопку «Далее», чтобы пройти этап начальной настройки</string>
+    <string name="account_deleting_confirm">Вы действительно хотите удалить аккаунт?</string>
+    <string name="app_version">Версия:</string>
+    <string name="app_build">Сборка:</string>
+    <string name="app_developer">Разработчик:</string>
+    <string name="settings_app_name">Название:</string>
 </resources>

@@ -8,4 +8,5 @@ public abstract class Constants {
     public static final int DEFAULT_PASSWORD_LENGTH = 6;
     public static final String EXCEPTION_KEY = "exception";
     public static final String WHITE_COLOR_HEX = "#ffffff";
+    public static final long DEFAULT_ANIMATION_TIME_IN_MILLIS = 200;
 }

@@ -33,6 +33,7 @@ android {
 }
 
 dependencies {
+    implementation("com.google.firebase:firebase-database:20.3.1")
     implementation(platform("com.google.firebase:firebase-bom:32.7.4"))
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth:22.3.1")
@@ -42,6 +43,7 @@ dependencies {
     implementation("io.coil-kt:coil:2.5.0")
     implementation("io.getstream:avatarview-coil:1.0.7")
     implementation("com.google.firebase:firebase-database:20.3.1")
+    implementation("androidx.activity:activity:1.8.0")
     //noinspection AnnotationProcessorOnCompilePath
     annotationProcessor("org.projectlombok:lombok:1.18.30")
     testImplementation("junit:junit:4.13.2")

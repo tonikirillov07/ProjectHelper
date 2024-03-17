@@ -1,14 +1,13 @@
-package com.ds.projecthelper.activities;
+package com.ds.projecthelper.activities.initialSetup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.ds.projecthelper.R;
-import com.ds.projecthelper.ShowAlerts;
+import com.ds.projecthelper.dialogs.ErrorDialog;
+import com.ds.projecthelper.activities.settings.MainPage;
 import com.ds.projecthelper.user.UserController;
 import com.ds.projecthelper.util.AnotherActivity;
 
@@ -25,7 +24,7 @@ public class InitialSetupFirstActivity extends AppCompatActivity {
 
             buttonNext.setOnClickListener(v -> AnotherActivity.gotoAnotherActivity(this, InitialSetupSecondActivity.class, true));
         }catch (Exception e){
-            ShowAlerts.showDialog(this, e, true);
+            ErrorDialog.showDialog(this, e, true);
         }
     }
 

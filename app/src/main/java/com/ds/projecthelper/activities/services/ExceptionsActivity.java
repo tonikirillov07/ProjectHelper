@@ -1,4 +1,4 @@
-package com.ds.projecthelper.activities;
+package com.ds.projecthelper.activities.services;
 
 import android.os.Bundle;
 import android.widget.Button;

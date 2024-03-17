@@ -1,9 +1,8 @@
-package com.ds.projecthelper.activities;
+package com.ds.projecthelper.activities.initialSetup;
 
 import static com.ds.projecthelper.Constants.MIN_LOGIN_LENGTH;
 import static com.ds.projecthelper.Constants.MIN_PASSWORD_LENGTH;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,11 +14,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.ds.projecthelper.CheckTextViews;
 import com.ds.projecthelper.R;
-import com.ds.projecthelper.ShowAlerts;
+import com.ds.projecthelper.dialogs.ErrorDialog;
+import com.ds.projecthelper.activities.services.RestorePasswordActivity;
+import com.ds.projecthelper.activities.settings.MainPage;
 import com.ds.projecthelper.user.UserController;
 import com.ds.projecthelper.util.AnotherActivity;
+import com.ds.projecthelper.util.Utils;
 
 public class InitialSetupSecondActivity extends AppCompatActivity {
+    private Button buttonNext;
     private EditText passwordField, loginField;
     private TextView title, iHaveAccount, iForgotMyPassword;
     private boolean logInIsOpen = false;
@@ -33,7 +36,7 @@ public class InitialSetupSecondActivity extends AppCompatActivity {
 
             loginField = findViewById(R.id.loginOrEmailTextField);
             passwordField = findViewById(R.id.passwordField);
-            Button buttonNext = findViewById(R.id.buttonNext);
+            buttonNext = findViewById(R.id.buttonNext);
             title = findViewById(R.id.title);
             iHaveAccount = findViewById(R.id.iHaveAccount);
             iForgotMyPassword = findViewById(R.id.iForgotPassword);
@@ -44,17 +47,24 @@ public class InitialSetupSecondActivity extends AppCompatActivity {
             iHaveAccount.setOnClickListener(v -> onHaveAccountButtonAction());
             iForgotMyPassword.setOnClickListener(v -> AnotherActivity.gotoAnotherActivity(this, RestorePasswordActivity.class, false));
         }catch (Exception e){
-            ShowAlerts.showDialog(this, e, true);
+            ErrorDialog.showDialog(this, e, true);
         }
     }
 
     private void onNextButtonAction(){
         try {
+            buttonNext.setEnabled(false);
+
             if (checkForEnteredData()) {
-                UserController.createUser(getLoginText(), getPasswordText(), () -> AnotherActivity.gotoAnotherActivity(this, InitialSetupThirdActivity.class, true), this);
+                if(!logInIsOpen)
+                    UserController.createUser(getLoginText(), getPasswordText(), () -> AnotherActivity.gotoAnotherActivity(this, InitialSetupThirdActivity.class, true), this);
+                else
+                    UserController.logIn(getLoginText(), getPasswordText(), () -> AnotherActivity.gotoAnotherActivity(this, MainPage.class, true), this);
             } else findErrorReason();
+
+            buttonNext.setEnabled(true);
         }catch (Exception e){
-            ShowAlerts.showDialog(this, e, true);
+            ErrorDialog.showDialog(this, e, true);
         }
     }
 
@@ -64,8 +74,11 @@ public class InitialSetupSecondActivity extends AppCompatActivity {
             iForgotMyPassword.setVisibility(!logInIsOpen ? View.VISIBLE : View.INVISIBLE);
             title.setText(!logInIsOpen ? getResources().getString(R.string.well_lets_log_in) : getResources().getString(R.string.first_let_s_create_account));
             logInIsOpen = !logInIsOpen;
+
+            Utils.clearEditText(loginField);
+            Utils.clearEditText(passwordField);
         }catch (Exception e){
-            ShowAlerts.showDialog(this, e, true);
+            ErrorDialog.showDialog(this, e, true);
         }
     }
 
@@ -74,7 +87,7 @@ public class InitialSetupSecondActivity extends AppCompatActivity {
             checkField.checkField(loginField, "login", MIN_LOGIN_LENGTH);
             checkField.checkField(passwordField, "password", MIN_PASSWORD_LENGTH);
         }catch (Exception e){
-            ShowAlerts.showDialog(this, e, true);
+            ErrorDialog.showDialog(this, e, true);
         }
     }
 
